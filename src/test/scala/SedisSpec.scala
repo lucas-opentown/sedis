@@ -9,7 +9,7 @@ import java.util
 class SedisSpec extends FunSpec{
   describe("A Scala redis server") {
 
-    val pool = new Pool(new JedisPool(new JedisPoolConfig(), "localhost", 6379, 2000))
+    val pool = new Pool(new JedisPool(new JedisPoolConfig(), "openlocal.com", 6379, 2000, null, 4))
     val j = pool.underlying.getResource
     j.flushAll
     pool.underlying.returnResourceObject(j)
